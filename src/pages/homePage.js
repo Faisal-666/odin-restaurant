@@ -1,5 +1,5 @@
-import './homePage.css';
-import restaurantBg from '../assest/restaurant.jpg';
+import '../assest/styles/homePage.css';
+import restaurantBg from '../assest/images/restaurant.jpg';
 import 'iconify-icon';
 
 const homePage = () => {

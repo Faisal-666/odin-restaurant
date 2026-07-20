@@ -1,4 +1,4 @@
-import './global.css';
+import './assest/styles/global.css';
 import homePage from './pages/homePage.js';
 import menuPage from './pages/menuPage.js';
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'menu':
             content.innerHTML = '';
-            content.appendChild(menuPage());
+            content.innerHTML = menuPage();
             break;
         case 'about':
             content.innerHTML = '<h2>About</h2>';
