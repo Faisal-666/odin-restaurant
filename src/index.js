@@ -1,9 +1,15 @@
 import './global.css';
 import homePage from './pages/homePage.js';
+import menuPage from './pages/menuPage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
    const content = document.querySelector('#content');
    content.innerHTML = homePage();
+
+   const logo = document.querySelector('.logo span');
+   logo.addEventListener('click', () => {
+    content.innerHTML = homePage();
+   });
 
    const nav = document.querySelector('nav');
    nav.addEventListener('click', (e) => {
@@ -15,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             content.innerHTML = homePage();
             break;
         case 'menu':
-            content.innerHTML = '<h2>Menu</h2>';
+            content.innerHTML = '';
+            content.appendChild(menuPage());
             break;
         case 'about':
             content.innerHTML = '<h2>About</h2>';
