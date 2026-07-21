@@ -2,13 +2,22 @@ import './assest/styles/global.css';
 import homePage from './pages/homePage.js';
 import menuPage from './pages/menuPage.js';
 
+let currentPage = '';
+
+const render = (parentEl, pageName, pageEl) => {
+    if (currentPage === pageName) return;
+
+    parentEl.innerHTML = pageEl();
+    currentPage = pageName;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
    const content = document.querySelector('#content');
-   content.innerHTML = homePage();
+   render(content, 'home', homePage);
 
    const logo = document.querySelector('.logo span');
    logo.addEventListener('click', () => {
-    content.innerHTML = homePage();
+    render(content, 'home', homePage);
    });
 
    const nav = document.querySelector('nav');
@@ -18,11 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     switch (target) {
         case 'home':
-            content.innerHTML = homePage();
+            render(content, 'home', homePage);
             break;
         case 'menu':
-            content.innerHTML = '';
-            content.innerHTML = menuPage();
+            render(content, 'menu', menuPage);
             break;
         case 'about':
             content.innerHTML = '<h2>About</h2>';
