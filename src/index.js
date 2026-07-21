@@ -15,29 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
    const content = document.querySelector('#content');
    render(content, 'home', homePage);
 
-   const logo = document.querySelector('.logo span');
-   logo.addEventListener('click', () => {
-    render(content, 'home', homePage);
-   });
-
-   const nav = document.querySelector('nav');
-   nav.addEventListener('click', (e) => {
+   document.addEventListener('click', (e) => {
     const target = e.target.id;
     if (!target) return;
 
     switch (target) {
         case 'home':
+        case 'home-logo':
             render(content, 'home', homePage);
             break;
         case 'menu':
+        case 'menuBtn':
             render(content, 'menu', menuPage);
             break;
         case 'about':
-            content.innerHTML = '<h2>About</h2>';
+            render(content, 'about', () => '<h2>About</h2>');
             break;
     
         default:
             return;
     }
    });
+   
 });

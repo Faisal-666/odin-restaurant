@@ -8,7 +8,6 @@
     --border: hsl(0, 0%, 20%);
     --box-shadow: hsla(0, 0%, 5%, 0.8);
     --primary: hsl(25, 95%, 55%);
-    --highlight: hsl(140, 35%, 55%);
 }
 *,
 *::before,

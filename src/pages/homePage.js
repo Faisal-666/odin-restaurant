@@ -10,16 +10,27 @@ const homePage = () => {
             </div>
 
             <div class="info-wrapper">
-                <div>
+                <div id="icon">
                     <iconify-icon icon="game-icons:deer"></iconify-icon>
                     <h1>The Wild Steakhouse</h1>
                 </div>
-                <p class="desc">Brings the taste of the wilderness to an unforgettable dining experience. 
-                    Inspired by ancient hunting traditions and modern culinary techniques, 
-                    we serve premium wild game dishes prepared over open flames with handcrafted sauces and seasonal ingredients.
-                    From tender venison to rich game-inspired creations, every plate tells a story of nature, craftsmanship, and bold flavors.
-                </p>
-                <span>Hours: Mon-Fri 10:00 - 22:00</span>
+                
+                <span id="tagline"><i>"Taste of the wilderness, crafted over open flames"</i></span>
+
+                <div id="list-wrapper">
+                    <ul>
+                        <li>Premium wild game dishes</li>
+                        <li>Handcrafted seasonal sauces</li>
+                        <li>Traditional fire cooking</li>
+                    </ul>
+                </div>
+
+                <div id="hours-wrapper">
+                    <span>Hours<span>                
+                    <span id="hours">🕒 Fri-Mon 10:00 - 22:00</span>
+                </div>
+
+                <button id="menuBtn" title="View Menu" type="button">View Menu</button>
             </div>
         </div>
     `;
