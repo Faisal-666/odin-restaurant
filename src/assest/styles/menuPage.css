@@ -10,7 +10,7 @@
 }
 #item-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 1fr;
     gap: .3em;
     align-items: center;
@@ -23,9 +23,10 @@
     position: relative;
     border: 1px solid var(--border);
     background-color: var(--bg-light);
-    max-inline-size: 46ch;
+    height: 380px;
+    width: 300px;
 
-    padding: .8em;
+    padding: .8em 1.8em;
     border-radius: .4em;
     transform: scale(.95);
 
@@ -37,33 +38,52 @@
     transform: scale(1);
 }
 .item-name-wrapper {
-    display: flex;
-    align-items: center;
-    gap: .2em;
-
+    text-align: center;
     color: var(--primary);
+    margin-top: 3.2em;
 }
 .item-name-wrapper .item-icon {
-    font-size: 2em;
+    font-size: 3em;
 }
 .menu-item .item-type {
-    margin-bottom: 1.2em;
-    font-weight: 700;
+    width: max-content;
+    font-weight: 600;
+    font-size: 1.1em;
+    position: absolute;
+    bottom: .8em;
+    left: 50%;
+    transform: translate(-50%);
 }
 .menu-item .item-price {
-    position: absolute;
-    top: -1px;
-    right: -1px;
-
-    font-weight: 500;
-    padding: .4em;
-    border-top-right-radius: .4em;
-    border-bottom-left-radius: .4em;
-    color: var(--primary);
-    background-color: var(--bg);
+    color: var(--text-muted);
+    font-weight: 100;
 }
 .menu-item .item-desc {
+    list-style-type: none;
     color: var(--text-muted);
-    line-height: 1.3;
-    margin-top: .7em;
+
+    margin: 2em auto 1em auto;
+    line-height: 1.8;
+    text-align: center;
+}
+.main-course::before {
+    content: '🍽️';
+}
+.chef-special::before {
+    content: '⭐';
+}
+.casual-menu::before {
+    content: '🍴';
+}
+.alternative-dish::before {
+    content: '🥗';
+}
+.dessert::before {
+    content: '🍰';
+}
+.appetizer::before {
+    content: '🥟';
+}
+.drink::before {
+    content: '🥤';
 }

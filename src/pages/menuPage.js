@@ -5,15 +5,17 @@ const makeMenuitem = (data) => {
     return data.map((el) => {
         return `
             <div class="menu-item">
-                <span class="item-type">● ${el.type}</span>
-                
                 <div class="item-name-wrapper">
                     <iconify-icon class="item-icon" icon=${el.icon}></iconify-icon>
-                    <h3 class="item-name">${el.name}</h3>
+                    <h3 class="item-name">${el.name} <span class="item-price"> - ${el.price}</span></h3>
                 </div>
                 
-                <span class="item-price">${el.price}</span>
-                <p class="item-desc">${el.desc}</p>
+                <ul class="item-desc">
+                    ${el.desc.map(li =>`<li>${li}</li>`).join('')}
+                </ul>
+
+                
+                <div class="item-type ${el.type.toLowerCase().split(' ').join('-')}">${el.type}</div>
             </div>
         `;
     }).join('');
