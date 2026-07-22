@@ -61,10 +61,27 @@ nav > button {
 
     transform: scale(0.95);
     transition: scale, color 300ms ease;
+    position: relative;
 }
-nav > button:hover {
+nav > button.active {
     transform: scale(1.05);
     color: var(--text);
+}
+nav > button::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    border-radius: 1em;
+    background-color: var(--primary);
+
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: width 300ms ease-out;
+}
+nav > button.active::after {
+    width: 80%;
 }
 #content {
     width: 80vw;
