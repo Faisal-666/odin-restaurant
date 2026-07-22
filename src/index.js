@@ -1,6 +1,7 @@
 import './assest/styles/global.css';
 import homePage from './pages/homePage.js';
 import menuPage from './pages/menuPage.js';
+import aboutPage from './pages/aboutPage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
    const content = document.querySelector('#content');
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('nav > #menu').classList.add('active');
             break;
         case 'about':
-            contentRender.render(() => `<h2>About</h2>`, 'about');
+            contentRender.render(aboutPage, 'about');
             break;
     
         default:

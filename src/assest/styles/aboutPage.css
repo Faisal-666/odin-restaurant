@@ -1,0 +1,53 @@
+#aboutPage {
+    height: 100%;
+    width: 100%;
+    padding: 2em;
+}
+#about-icon h2 {
+    font-size: 2em;
+}
+#about-icon [icon] {
+    color: var(--primary);
+    font-size: 4em;
+    padding-bottom: .2em;
+}
+#about-icon {
+    width: max-content;
+    text-align: center;
+    margin: 0 auto;
+}
+#about-icon span {
+    display: inline-block;
+    padding: .3em 0;
+}
+#aboutPage div:nth-child(2) {
+    color: var(--text-muted);
+    width: max-content;
+    margin: 2em auto;
+
+    text-align: center;
+}
+#aboutPage div:nth-child(2) ul {
+    list-style: none;
+    padding: .5em 0;
+    line-height: 1.7;
+}
+#aboutPage #visitBtn {
+    display: block;
+    margin: 2.5em auto 1em auto;
+    padding: 1em 1.5em;
+    
+    border: none;
+    border-radius: .3em;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: var(--primary);
+    box-shadow: 0 20px 16px var(--box-shadow);
+    
+    transform: scale(.95);
+    cursor: pointer;
+    transition: 200ms transform ease;
+}
+#aboutPage #visitBtn:hover {
+    transform: scale(1);
+}

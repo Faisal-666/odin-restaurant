@@ -117,13 +117,20 @@ footer {
     color: red;
 }
 footer .map {
-    width: 300px;
+    width: 200px;
     height: 100%;
+    padding: .6em;
 }
 .map > img {
     display: block;
+    filter: brightness(.5);
     width: 100%;
     object-fit: contain;
     border-radius: .2em;
     cursor: grab;
+
+    transition: 300ms filter ease;
+}
+.map > img:hover {
+    filter: brightness(.7);
 }
