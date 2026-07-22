@@ -2,18 +2,25 @@ import './assest/styles/global.css';
 import homePage from './pages/homePage.js';
 import menuPage from './pages/menuPage.js';
 
-let currentPage = '';
-
-const render = (parentEl, pageName, pageEl) => {
-    if (currentPage === pageName) return;
-
-    parentEl.innerHTML = pageEl();
-    currentPage = pageName;
-};
-
 document.addEventListener('DOMContentLoaded', () => {
    const content = document.querySelector('#content');
-   render(content, 'home', homePage);
+    const contentRender = ((parentEl) => {
+        let currentState = '';
+
+        const setState = (newState) => {
+            currentState = newState;
+        }
+
+        const render = (content, newState) => {
+            if (newState === currentState) return;
+            setState(newState);
+            parentEl.innerHTML = content();
+        };
+
+        return { render };
+    })(content);
+
+   contentRender.render(homePage, 'home');
 
    const nav = document.querySelector('nav');
    nav.addEventListener('click', (e) => {
@@ -31,18 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     switch (target) {
         case 'home':
         case 'home-logo':
-            render(content, 'home', homePage);
+            contentRender.render(homePage, 'home');
             document.querySelector('nav > button.active').classList.remove('active');
             document.querySelector('nav > #home').classList.add('active');
             break;
         case 'menu':
         case 'menuBtn':
-            render(content, 'menu', menuPage);
+            contentRender.render(menuPage, 'menu');
             document.querySelector('nav > button.active').classList.remove('active');
             document.querySelector('nav > #menu').classList.add('active');
             break;
         case 'about':
-            render(content, 'about', () => '<h2>About</h2>');
+            contentRender.render(() => `<h2>About</h2>`, 'about');
             break;
     
         default:
