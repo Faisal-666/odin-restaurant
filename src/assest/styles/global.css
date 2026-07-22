@@ -24,7 +24,6 @@ body {
     color: var(--text);
     font-family: monospace, sans-serif;
     font-size: 16px;
-    padding-bottom: 1em;
 }
 header {
     background-color: var(--bg-dark);
@@ -91,4 +90,40 @@ nav > button.active::after {
     background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: .4em;
+}
+footer {
+    width: 100%;
+    background-color: var(--bg);
+    padding: 1em;
+    margin-top: 2em;
+
+    display: flex;
+    justify-content: space-between;
+}
+.contact ul {
+    list-style-type: none;
+}
+.contact ul li {
+    padding: .3em 0;
+}
+.contact li a{
+    color: var(--text);
+    text-decoration: none;
+}
+.contact li [icon] {
+    font-size: 1.6em;
+}
+.contact li [icon="mdi:youtube"] {
+    color: red;
+}
+footer .map {
+    width: 300px;
+    height: 100%;
+}
+.map > img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    border-radius: .2em;
+    cursor: grab;
 }
