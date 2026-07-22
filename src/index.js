@@ -15,12 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const render = (content, newState) => {
             if (newState === currentState) return;
             setState(newState);
-            parentEl.style.opacity = 0;
-
-            requestAnimationFrame(() => {
-                parentEl.innerHTML = content();
-                parentEl.style.opacity = 1;
-            })
+            
+            parentEl.innerHTML = content();
         };
 
         return { render };
