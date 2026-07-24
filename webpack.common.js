@@ -3,16 +3,8 @@ import path from 'node:path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-    mode: 'development',
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(import.meta.dirname, 'dist'),
-        clean: true,
-    },
-    devtool: 'eval-source-map',
-    devServer: {
-        watchFiles: ['./src/template.html'],
+    entry: {
+        app:'./src/index.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -34,5 +26,10 @@ export default {
                 type: 'asset/resource',
             }
         ],
+    },
+    output: {
+        filename: 'main.js',
+        path: path.resolve(import.meta.dirname, 'dist'),
+        clean: true,
     },
 };
